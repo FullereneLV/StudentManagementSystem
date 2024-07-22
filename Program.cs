@@ -1,2 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+
+using HW5_StudentManagementSystem;
+
+new RunStudentManagementSystem().Run();
+
+
+
+           

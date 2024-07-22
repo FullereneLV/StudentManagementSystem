@@ -1,0 +1,15 @@
+/home/ksenia/workspace/HW/HW5_StudentManagementSystem/obj/Debug/net8.0/HW5_StudentManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+/home/ksenia/workspace/HW/HW5_StudentManagementSystem/obj/Debug/net8.0/HW5_StudentManagementSystem.AssemblyInfoInputs.cache
+/home/ksenia/workspace/HW/HW5_StudentManagementSystem/obj/Debug/net8.0/HW5_StudentManagementSystem.AssemblyInfo.cs
+/home/ksenia/workspace/HW/HW5_StudentManagementSystem/obj/Debug/net8.0/HW5_StudentManagementSystem.csproj.CoreCompileInputs.cache
+/home/ksenia/workspace/HW/HW5_StudentManagementSystem/obj/Debug/net8.0/HW5_StudentManagementSystem.sourcelink.json
+/home/ksenia/workspace/HW/HW5_StudentManagementSystem/bin/Debug/net8.0/HW5_StudentManagementSystem
+/home/ksenia/workspace/HW/HW5_StudentManagementSystem/bin/Debug/net8.0/HW5_StudentManagementSystem.deps.json
+/home/ksenia/workspace/HW/HW5_StudentManagementSystem/bin/Debug/net8.0/HW5_StudentManagementSystem.runtimeconfig.json
+/home/ksenia/workspace/HW/HW5_StudentManagementSystem/bin/Debug/net8.0/HW5_StudentManagementSystem.dll
+/home/ksenia/workspace/HW/HW5_StudentManagementSystem/bin/Debug/net8.0/HW5_StudentManagementSystem.pdb
+/home/ksenia/workspace/HW/HW5_StudentManagementSystem/obj/Debug/net8.0/HW5_StudentManagementSystem.dll
+/home/ksenia/workspace/HW/HW5_StudentManagementSystem/obj/Debug/net8.0/refint/HW5_StudentManagementSystem.dll
+/home/ksenia/workspace/HW/HW5_StudentManagementSystem/obj/Debug/net8.0/HW5_StudentManagementSystem.pdb
+/home/ksenia/workspace/HW/HW5_StudentManagementSystem/obj/Debug/net8.0/HW5_StudentManagementSystem.genruntimeconfig.cache
+/home/ksenia/workspace/HW/HW5_StudentManagementSystem/obj/Debug/net8.0/ref/HW5_StudentManagementSystem.dll

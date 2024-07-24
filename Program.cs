@@ -1,9 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using HW5_StudentManagementSystem;
+using HW5_StudentManagementSystem.MenuAll;
+using HW5_StudentManagementSystem.Models;
 
-using HW5_StudentManagementSystem;
-
-new RunStudentManagementSystem().Run();
-
-
-
-           
+var classesSchool = new List<ClassInSchool>();
+var users = new List<User>();
+new LogInMenu(users, classesSchool).RunLoginMenu();

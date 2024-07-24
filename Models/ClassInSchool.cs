@@ -4,11 +4,21 @@ public class ClassInSchool
 {
     public string Name { get; }
     public List<Student> Students = new();
+    public List<User> Users = new();
     public int AverageMarks { get; }
 
     public ClassInSchool(string name)
     {
         Name = name;
+    }
+    
+    public void PrintUser()
+    {
+        Console.WriteLine("First Name | Last Name | Email | Is teacher");
+        foreach (var user in Users)
+        {
+            Console.WriteLine($"{user.FirstName} | {user.LastName} | {user.Email} | {user.IsTeacher}");
+        }
     }
 
     public void PrintStudents()

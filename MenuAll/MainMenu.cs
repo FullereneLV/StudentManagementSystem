@@ -15,6 +15,7 @@ public class MainMenu
         _studentsMenu = new StudentsMenu(_classes);
         _marksMenu = new MarksMenu(_classes);
         _viewInfoMenu = new ViewInfoMenu(_classes);
+        
     }
 
     public void RunMainMenu()

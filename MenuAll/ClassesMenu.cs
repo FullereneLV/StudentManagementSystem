@@ -26,7 +26,7 @@ public class ClassesMenu
                 ViewClasses();
                 break;
             case 3:
-                BackToMainMenu();
+                new MainMenu(_classes).RunMainMenu();
                 break;
         }
     }
@@ -35,8 +35,25 @@ public class ClassesMenu
     {
         Console.Write("Enter class name: ");
         var className = Console.ReadLine();
-        _classes.Add(new ClassInSchool(className));
-        Console.WriteLine("Class added successfully.");
+        if (!string.IsNullOrWhiteSpace(className))
+        {
+            var newClassExist = _classes.Exists(c => c.Name == className);
+            if (!newClassExist)
+            {
+                _classes.Add(new ClassInSchool(className));
+                Console.WriteLine("Class added successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Class exists.");
+            }
+        }
+        else
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Please enter class name:");
+            Console.ResetColor();
+        }
         ConsoleUtils.WaitForKeyPress();
         RunClassesMenu();
     }
@@ -53,7 +70,9 @@ public class ClassesMenu
         }
         else
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Class not found.");
+            Console.ResetColor();
         }
         ConsoleUtils.WaitForKeyPress();
         RunClassesMenu();
@@ -61,15 +80,23 @@ public class ClassesMenu
 
     public void ViewClasses()
     {
-        foreach (var schoolClass in _classes)
+        Console.WriteLine("Show all classes in school:");
+        var count = _classes.Count();
+        if (count != 0)
         {
-            schoolClass.PrintStudents();
+            foreach (var schoolClass in _classes)
+            {
+                Console.WriteLine($"Class name :{schoolClass.Name}");
+            }
+        }
+        else
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"List of class is empty.");
+            Console.ResetColor();
+
         }
         ConsoleUtils.WaitForKeyPress();
         RunClassesMenu();
-    }
-
-    private void BackToMainMenu(){
-        
     }
 }

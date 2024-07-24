@@ -1,11 +1,8 @@
-using HW5_StudentManagementSystem.Models;
-
 namespace HW5_StudentManagementSystem.MenuAll;
 
 public class MainMenu
 {
     private List<ClassInSchool> _classes;
-    private List<User> _users;
     private ClassesMenu _classesMenu;
     private StudentsMenu _studentsMenu;
     private MarksMenu _marksMenu;
@@ -44,7 +41,7 @@ public class MainMenu
                 _viewInfoMenu.RunInfoMenu();
                 break;
             case 4:
-                ConsoleUtils.WaitForKeyPress();
+                Environment.Exit(1);
                 break;
         }
     }

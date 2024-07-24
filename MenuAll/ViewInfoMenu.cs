@@ -30,7 +30,7 @@ public class ViewInfoMenu
                 ViewClassDetails();
                 break;
             case 2:
-                BackToMainMenu();
+                new MainMenu(_classes).RunMainMenu();
                 break;
         }
     }

@@ -26,8 +26,10 @@ public class StudentsMenu
                 RemoveStudent();
                 break;
             case 2:
-            
-                //BackToMainMenu();
+                ShowAllStudents();
+                break; 
+            case 3:
+                new MainMenu(_classes).RunMainMenu();
                 break;
         }
     }
@@ -81,9 +83,6 @@ public class StudentsMenu
         }
         ConsoleUtils.WaitForKeyPress();
         RunStudentMenu();
-    }
-    private void BackToMainMenu(){
-
     }
 
     private Student ShowAllStudents(){

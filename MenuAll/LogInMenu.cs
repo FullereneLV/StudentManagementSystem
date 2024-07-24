@@ -3,7 +3,7 @@ using HW5_StudentManagementSystem.Models;
 namespace HW5_StudentManagementSystem.MenuAll;
 public class LogInMenu
 {
-    private List<User> _users = new();
+    private List<User> _users = new List<User>();
     private MainMenu _mainMenu;
 
     public LogInMenu(List<User> users, List<ClassInSchool> classes)
@@ -35,14 +35,18 @@ public class LogInMenu
     private void SingInUser()
     {
         Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Welcome to create account");
+        Console.ResetColor();
         Console.WriteLine("Enter email:");
         var email = Console.ReadLine();
         Console.WriteLine("Enter password");
         var password = Console.ReadLine();
         if (_users.Exists(u => u.Email == email))
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Username already exists. Please try logging in.");
+            Console.ResetColor();
         }
         else
         {
@@ -73,7 +77,9 @@ public class LogInMenu
             } while (keyPressed != ConsoleKey.Y && keyPressed != ConsoleKey.N);
 
             _users.Add(new User(email, firstName, lastName, password, isTeacher));
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("User registered successfully.");
+            Console.ResetColor();
             ConsoleUtils.WaitForKeyPress();
             RunLoginMenu();
         }
@@ -82,7 +88,9 @@ public class LogInMenu
     private void LogInUser()
     {
         Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Welcome to Log In:");
+        Console.ResetColor();
         Console.WriteLine("Enter email:");
         var email = Console.ReadLine();
         Console.WriteLine("Enter password");
@@ -91,13 +99,17 @@ public class LogInMenu
         var user = _users.Find(u => u.Email == email && u.Password == password);
         if (user != null)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Login successful!");
+            Console.ResetColor();
             ConsoleUtils.WaitForKeyPress();
             _mainMenu.RunMainMenu();
         }
         else
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Invalid credentials. Please try again.");
+            Console.ResetColor();
             ConsoleUtils.WaitForKeyPress();
             RunLoginMenu();
         }

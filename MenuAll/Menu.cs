@@ -14,7 +14,9 @@ public class Menu
 
     private void DisplayOptions()
     {
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine(Prompt);
+        Console.ResetColor();
         for (int i = 0; i < Options.Length; i++)
         {
             string currentOption = Options[i];
@@ -22,14 +24,12 @@ public class Menu
             if (i == SelectedIndex)
             {
                 prefix = "---> ";
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Green;
             }
             else
             {
                 prefix = "     ";
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.Black;
             }
             Console.WriteLine($"{prefix}{currentOption}");
         }

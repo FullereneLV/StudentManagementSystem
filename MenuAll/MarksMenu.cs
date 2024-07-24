@@ -25,23 +25,20 @@ namespace HW5_StudentManagementSystem.MenuAll
                     RemoveMarksByStudent();
                     break;
                 case 2:
-                    BackToMainMenu();
+                    new MainMenu(_classes).RunMainMenu();
                     break;
             }
         }
         private void AddUpdateMarksByStudent()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("Enter student last name to manage marks: ");
+            Console.ResetColor();
             var name = Console.ReadLine();
             var student = FindStudent(name);
             if (student != null)
             {
-                Console.Write("Enter subject (Math, English, Biology, Geography): ");
-                string subject = Console.ReadLine();
-                Console.Write("Enter mark: ");
-                int mark = int.Parse(Console.ReadLine());
-                student.Marks[subject] = mark;
-                Console.WriteLine("Mark added/updated successfully.");
+                SchoolSubjectForAddOrUpdateMenu(student);
             }
             else
             {
@@ -72,20 +69,7 @@ namespace HW5_StudentManagementSystem.MenuAll
             var student = FindStudent(name);
             if (student != null)
             {
-                Console.Write($"Enter subject: \n{SchoolSubject.Math.ToString()},"
-                                + $"{SchoolSubject.English.ToString()},"
-                                + $"{SchoolSubject.Biology.ToString()},"
-                                + $"{SchoolSubject.Geography.ToString()} \nto remove mark: ");
-                string subject = Console.ReadLine();
-                if (student.Marks.ContainsKey(subject))
-                {
-                    student.Marks.Remove(subject);
-                    Console.WriteLine("Mark removed successfully.");
-                }
-                else
-                {
-                    Console.WriteLine("Subject not found.");
-                }
+                SchoolSubjectForRemoveMenu(student);
             }
             else
             {
@@ -95,7 +79,7 @@ namespace HW5_StudentManagementSystem.MenuAll
             RunMarksMenu();
         }
 
-        private void SchoolSubjectMenu(Student student)
+        private void SchoolSubjectForRemoveMenu(Student student)
         {
             string prompt = "School Subject Menu:";
             string[] options = { $"{SchoolSubject.Math.ToString()}",
@@ -110,25 +94,68 @@ namespace HW5_StudentManagementSystem.MenuAll
                 case 0:
                     student.Marks.Remove($"{SchoolSubject.Math}");
                     Console.WriteLine("Mark removed successfully.");
+                    ConsoleUtils.WaitForKeyPress();
+                    RunMarksMenu();
                     break;
                 case 1:
                     student.Marks.Remove($"{SchoolSubject.English}");
                     Console.WriteLine("Mark removed successfully.");
+                    ConsoleUtils.WaitForKeyPress();
+                    RunMarksMenu();
                     break;
                 case 2:
                     student.Marks.Remove($"{SchoolSubject.Biology}");
                     Console.WriteLine("Mark removed successfully.");
+                    ConsoleUtils.WaitForKeyPress();
+                    RunMarksMenu();
                     break;
                 case 3:
                     student.Marks.Remove($"{SchoolSubject.Geography}");
                     Console.WriteLine("Mark removed successfully.");
+                    ConsoleUtils.WaitForKeyPress();
+                    RunMarksMenu();
                     break;
             }
         }
-        private void BackToMainMenu(){
 
+        private void SchoolSubjectForAddOrUpdateMenu(Student student)
+        {
+            string prompt = "School Subject Menu:";
+            string[] options = { $"{SchoolSubject.Math.ToString()}",
+                                $"{SchoolSubject.English.ToString()}",
+                                $"{SchoolSubject.Biology.ToString()}",
+                                $"{SchoolSubject.Geography.ToString()}" };
+            Menu menu = new Menu(prompt, options);
+            int selectedIndex = menu.Run();
+            Console.Write("Enter mark: ");
+            int mark = int.Parse(Console.ReadLine());
+            switch (selectedIndex)
+            {
+                case 0:
+                    student.Marks[SchoolSubject.Math.ToString()] = mark;
+                    Console.WriteLine("Mark added/updated successfully.");
+                    ConsoleUtils.WaitForKeyPress();
+                    RunMarksMenu();
+                    break;
+                case 1:
+                    student.Marks[SchoolSubject.English.ToString()] = mark;
+                    Console.WriteLine("Mark added/updated successfully.");
+                    ConsoleUtils.WaitForKeyPress();
+                    RunMarksMenu();
+                    break;
+                case 2:
+                    student.Marks[SchoolSubject.Biology.ToString()] = mark;
+                    Console.WriteLine("Mark added/updated successfully.");
+                    ConsoleUtils.WaitForKeyPress();
+                    RunMarksMenu();
+                    break;
+                case 3:
+                    student.Marks[SchoolSubject.Geography.ToString()] = mark;
+                    Console.WriteLine("Mark added/updated successfully.");
+                    ConsoleUtils.WaitForKeyPress();
+                    RunMarksMenu();
+                    break;
+            }
         }
     }
-
-    
 }

@@ -9,7 +9,7 @@ public class ClassesMenu
     }
     public void RunClassesMenu()
     {
-        string prompt = "Welcom to Student management system:";
+        string prompt = "Welcome to Manage Classes:";
         string[] options = { "Add class", "Remove class", "View classes", "Bact to Main menu" };
         Menu menu = new Menu(prompt, options);
         int selectedIndex = menu.Run();

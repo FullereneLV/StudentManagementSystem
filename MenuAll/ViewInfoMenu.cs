@@ -15,7 +15,7 @@ public class ViewInfoMenu
 
      public void RunInfoMenu()
     {
-        string prompt = "Welcom to Main Menu:";
+        string prompt = "Welcom to View Information:";
         string[] options = { "View Student Details", "View Class Details",
                             "Back to Main Menu"};
         Menu menu = new Menu(prompt, options);

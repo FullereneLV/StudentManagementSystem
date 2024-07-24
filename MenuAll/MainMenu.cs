@@ -41,7 +41,7 @@ public class MainMenu
                 _viewInfoMenu.RunInfoMenu();
                 break;
             case 4:
-                Environment.Exit(1);
+                ConsoleUtils.WaitForKeyPress();
                 break;
         }
     }

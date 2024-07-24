@@ -128,7 +128,9 @@ namespace HW5_StudentManagementSystem.MenuAll
             Menu menu = new Menu(prompt, options);
             int selectedIndex = menu.Run();
             Console.Write("Enter mark: ");
-            int mark = int.Parse(Console.ReadLine());
+            var value = Console.ReadLine();
+            int mark;
+            int.TryParse(value, out mark);
             switch (selectedIndex)
             {
                 case 0:

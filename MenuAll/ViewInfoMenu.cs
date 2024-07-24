@@ -82,8 +82,4 @@ public class ViewInfoMenu
 
         return null;
     }
-
-    private void BackToMainMenu(){
-        
-    }
 }

@@ -13,7 +13,7 @@ public class StudentsMenu
     public void RunStudentMenu()
     {
         string prompt = "Welcom to Manage Students:";
-        string[] options = { "Add Student", "Remove Student", "Show All Students", "Back to Main Menu" };
+        string[] options = { "Add Student", "Remove Student", "Back to Main Menu" };
         Menu menu = new Menu(prompt, options);
         int selectedIndex = menu.Run();
 
@@ -26,9 +26,6 @@ public class StudentsMenu
                 RemoveStudent();
                 break;
             case 2:
-                ShowAllStudents();
-                break; 
-            case 3:
                 new MainMenu(_classes).RunMainMenu();
                 break;
         }
@@ -41,7 +38,13 @@ public class StudentsMenu
         Console.Write("Enter student last name: ");
         var lastName = Console.ReadLine();
         Console.Write("Enter student age: ");
-        var age = byte.Parse(Console.ReadLine());
+        byte age =0;
+        try{
+            age = byte.Parse(Console.ReadLine());
+        }catch(FormatException e){
+            Console.WriteLine($"Error: {e.Message}");
+        }
+        
         Console.Write("Enter student class: ");
         var studentClass = Console.ReadLine();
 
@@ -83,14 +86,5 @@ public class StudentsMenu
         }
         ConsoleUtils.WaitForKeyPress();
         RunStudentMenu();
-    }
-
-    private Student ShowAllStudents(){
-        foreach (var schoolClass in _classes)
-        {
-            
-        }
-
-        return null;
     }
 }

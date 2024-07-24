@@ -4,5 +4,4 @@ using HW5_StudentManagementSystem.Models;
 
 List<ClassInSchool> classesSchool = new List<ClassInSchool>();
 List<User> users = new List<User>();
-// new LogInMenu(users, classesSchool).RunLoginMenu();
-new ClassesMenu(classesSchool).RunClassesMenu();
+new LogInMenu(users, classesSchool).RunLoginMenu();

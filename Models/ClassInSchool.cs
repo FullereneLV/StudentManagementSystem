@@ -13,9 +13,10 @@ public class ClassInSchool
 
     public void PrintStudents()
     {
+        Console.WriteLine("First Name | Last Name | Age | Mark");
         foreach (var student in Students)
         {
-            Console.WriteLine($"{student.FirstName} {student.LastName} ({student.Age}) marks: {student.GetAverageMark():F2}");
+            Console.WriteLine($"{student.FirstName} | {student.LastName} | {student.Age} | {student.GetAverageMark():F2}");
         }
     }
 }

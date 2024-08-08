@@ -1,3 +1,5 @@
+using HW5_StudentManagementSystem.Models;
+
 namespace HW5_StudentManagementSystem.MenuAll;
 
 public class MainMenu
@@ -26,6 +28,9 @@ public class MainMenu
                             "Log Out" };
         Menu menu = new Menu(prompt, options);
         int selectedIndex = menu.Run();
+        bool showMenu = false;
+            while (!showMenu){
+
 
         switch (selectedIndex)
         {
@@ -42,8 +47,9 @@ public class MainMenu
                 _viewInfoMenu.RunInfoMenu();
                 break;
             case 4:
-                ConsoleUtils.WaitForKeyPress();
-                break;
+                
+                    break;
         }
+}
     }
 }

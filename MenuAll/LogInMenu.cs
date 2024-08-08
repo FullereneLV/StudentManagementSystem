@@ -3,7 +3,7 @@ using HW5_StudentManagementSystem.Models;
 namespace HW5_StudentManagementSystem.MenuAll;
 public class LogInMenu
 {
-    private List<User> _users = new List<User>();
+    private List<User> _users;
     private MainMenu _mainMenu;
 
     public LogInMenu(List<User> users, List<ClassInSchool> classes)
